@@ -5,6 +5,7 @@ public class Main{
         Payroll payroll = new Payroll();
         payroll.addNewEmployee(emp4);
         payroll.addNewEmployee(new Employee(5, "John Doe", "Senior Developer", 3000d, 150d));
+        payroll.addNewEmployee(new Employee());
         payroll.displayAllEmployeePayroll();
 
     }
