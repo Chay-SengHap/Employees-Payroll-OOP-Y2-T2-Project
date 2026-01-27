@@ -20,6 +20,7 @@ public class Payroll{
         System.out.println("=====Display All Employees Infomation=====");
         for(Employee employee : employees){
             employee.displayInfo();
+            System.out.println("------------------------------------------");
         }
         System.out.println("==========================================");
     }
