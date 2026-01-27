@@ -7,9 +7,9 @@ public class Payroll{
 
     public Payroll(){
         employees = new ArrayList<>();
-        employees.add(new Employee(1 , "Sorayuth" ,"Junior Front-End" , 1200 , 20));
-        employees.add(new Employee(2 , "SrongChhay" ,"Junior Back-End" , 1500 , 40));
-        employees.add(new Employee(3 , "Senghap" ,"Junior Full-Stack" , 2000 , 100));
+        employees.add(new Employee(1 , "Sorayuth" ,"Junior Front-End" , 1200d , 20d));
+        employees.add(new Employee(2 , "SrongChhay" ,"Junior Back-End" , 1500d , 40d));
+        employees.add(new Employee(3 , "Senghap" ,"Junior Full-Stack" , 2000d , 100d));
     }
 
     public void addNewEmployee(Employee employee){
