@@ -8,12 +8,7 @@ public class Employee {
     Double baseSalary;
     Double bonus;
     public Employee(){
-        name = "Unknow";
-        id = 0;
-        position = "Unknow";
-        baseSalary = 0d;
-        bonus = 0d;
-
+        
     }
     public Employee(int id ,String name, String position, Double baseSalary, Double bonus){
         this.name = name;
@@ -24,8 +19,8 @@ public class Employee {
     }
 
     void displayInfo(){
-        System.out.println("Name: "+ name);
         System.out.println("ID: "+ id);
+        System.out.println("Name: "+ name);
         System.out.println("Position: "+ position);
         System.out.println("Salary: $"+ baseSalary);
         System.out.println("Bonus: $"+ bonus);
