@@ -1,25 +1,38 @@
 
-import java.util.ArrayList;
-
 public class Payroll{
 
-    public ArrayList<Employee>employees;
+    public Employee[] employees;
+    public int totalEmployee;
 
     public Payroll(){
-        employees = new ArrayList<>();
-        employees.add(new Employee(1 , "Sorayuth" ,"Junior Front-End" , 1200d , 20d));
-        employees.add(new Employee(2 , "SrongChhay" ,"Junior Back-End" , 1500d , 40d));
-        employees.add(new Employee(3 , "Senghap" ,"Junior Full-Stack" , 2000d , 100d));
+        this(10);
     }
 
+    public Payroll(int maxEmployee){
+        employees = new Employee[maxEmployee];
+        totalEmployee = 0;
+    }
+
+    
+
     public void addNewEmployee(Employee employee){
-        employees.add(employee);
+        if (employees == null) {
+            System.out.println("Cannot Added Null Employee");
+            return;
+        }
+        
+        if(totalEmployee<employees.length){
+            employees[totalEmployee] = employee;
+            totalEmployee++;
+        }else{
+            System.out.println("Cannot hire more employees");
+        }
     }
 
     public void displayAllEmployeePayroll(){
         System.out.println("=====Display All Employees Infomation=====");
-        for(Employee employee : employees){
-            employee.displayInfo();
+        for(int i = 0 ; i < totalEmployee ; i++){
+            employees[i].displayInfo();
             System.out.println("------------------------------------------");
         }
         System.out.println("==========================================");

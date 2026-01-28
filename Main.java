@@ -1,11 +1,19 @@
 public class Main{
 
     public static void main(String[] args){
-        Employee emp4 = new Employee(4, "Alice", "Developer", 2500d, 100d);
-        Payroll payroll = new Payroll();
-        payroll.addNewEmployee(emp4);
-        payroll.addNewEmployee(new Employee(5, "John Doe", "Senior Developer", 3000d, 150d));
-        payroll.displayAllEmployeePayroll();
+
+        Company company = new Company("ABA", "TTP", 2);
+       
+        Employee emp1 = new Employee(1, "SrongChhay", "Junior Full-Stack Dev", 1200d, 150d);
+        Employee emp2 = new Employee(2, "Rayuth", "Junior Front-end", 1000d, 100d);
+
+        company.hireEmployee(emp1);
+        company.hireEmployee(emp2);
+        company.hireEmployee(emp2);
+        company.displayCompanyInfo();
+        
+
+        
 
     }
     
