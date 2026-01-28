@@ -8,6 +8,7 @@ public class Employee {
     Double baseSalary;
     Double bonus;
 
+
     public Employee(int id ,String name, String position, Double baseSalary, Double bonus){
         this.name = name;
         this.id = id;
