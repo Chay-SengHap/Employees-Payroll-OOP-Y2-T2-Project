@@ -21,7 +21,7 @@ public class Payroll{
             return;
         }
         
-        if(totalEmployee<employees.length){
+        if(totalEmployee < employees.length){
             employees[totalEmployee] = employee;
             totalEmployee++;
         }else{
