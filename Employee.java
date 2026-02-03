@@ -1,16 +1,21 @@
 
 public class Employee {
 
+    static int employeeCount = 0;
     String name;
-    String companyEmpId;
+    int companyEmpId;
     int nationalId;
     PositionHistory[] positionsHistory;
     PayrollRecord[] payrolls;
     int positionCount;
     int payrollCount;
+
+   
     
     
     public Employee(String name, int nationalId) {
+        employeeCount++;
+        companyEmpId  = employeeCount;
         this.name = name;
         this.nationalId = nationalId;
         positionsHistory = new PositionHistory[2];

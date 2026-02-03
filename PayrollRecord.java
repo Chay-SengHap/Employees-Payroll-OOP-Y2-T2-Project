@@ -4,9 +4,11 @@ public class PayrollRecord{
     double totalSalary;
     int month;
     int year;
+    Comission[] comissions;
+    int comissionCount;
     
-    public PayrollRecord(double baseSalary , int month , int year) {
-        this.totalSalary = 
+    public PayrollRecord(double totalSalary , int month , int year) {
+        this.totalSalary = totalSalary;  
         this.month = month;
         this.year = year;
     }
