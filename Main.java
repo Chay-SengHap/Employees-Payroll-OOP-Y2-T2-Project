@@ -28,12 +28,28 @@ public class Main{
 
         company.addEmployee(emp1);
         company.displayAllEmployeePayrolls();
-       
-
-
 
         
 
+
+        
+        System.out.println("===== F1: Primitive Copy =====");
+        int salary1 = 1000;
+        int salary2 = salary1;   // primitive copy
+
+        salary2 = 2000;          // change copy
+
+        System.out.println("salary1 (original): " + salary1);
+        System.out.println("salary2 (copy): " + salary2);
+
+
+
+        System.out.println("\n===== F2: Reference Copy =====");
+        Employee emp2 = emp1;
+        emp2.name = "Not Yuth";
+
+        System.out.println("emp1 name: " + emp1.name);
+        System.out.println("emp2 name: " + emp2.name);
         
 
     }
