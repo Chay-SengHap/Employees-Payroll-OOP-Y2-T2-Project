@@ -1,27 +1,29 @@
 public class PositionHistory {
+
     String position;
     double baseSalary;
-    String startDate;  
-    String endDate;  //// unknow
-  
+    String startDate;
+    String endDate;
 
     public PositionHistory(String position, double baseSalary, String startDate) {
         this.position = position;
         this.baseSalary = baseSalary;
         this.startDate = startDate;
-        this.endDate = "Unknown";
+        this.endDate = "Now";
     }
 
-    public String getStartDate(){
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setEndDate(String endDate){
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
-    
-
-    
-
+    @Override
+    public String toString() {
+        return position +
+               " | Salary: $" + baseSalary +
+               " | " + startDate + " - " + endDate;
+    }
 }
