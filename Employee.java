@@ -26,12 +26,19 @@ public class Employee {
     }
 
     public void addPositionHistory(PositionHistory p) {
-        if (positionCount > 0) {
-            positionsHistory[positionCount - 1]
-                    .setEndDate(p.getStartDate());
+        if(positionCount == positionsHistory.length){
+
+            PositionHistory[] temp = new PositionHistory[positionsHistory.length + 1];
+            for(int i = 0 ; i < positionCount ; i++){
+                temp[i] = positionsHistory[i];
+            }
+            positionsHistory = temp;
         }
         positionsHistory[positionCount] = p;
         positionCount++;
+        if (positionCount > 1) {
+           positionsHistory[positionCount -2 ].endDate = p.startDate;
+        }
     }
 
     public PositionHistory getCurrentPosition() {
@@ -49,7 +56,7 @@ public class Employee {
     void addPayroll(PayrollRecord payroll){
         if(payrollCount == payrollsRecord.length){
 
-            PayrollRecord[] temp = new PayrollRecord[payrollsRecord.length * 2];
+            PayrollRecord[] temp = new PayrollRecord[payrollsRecord.length + 1];
             for(int i = 0 ; i < payrollCount ; i++){
                 temp[i] = payrollsRecord[i];
             }

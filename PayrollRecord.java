@@ -18,7 +18,7 @@ public class PayrollRecord{
     void addCommision(Comission comission){
         if(comissionCount == comissions.length){
 
-            Comission[] temp = new Comission[comissions.length * 2];
+            Comission[] temp = new Comission[comissions.length + 1];
             for(int i = 0 ; i < comissionCount ; i++){
                 temp[i] = comissions[i];
             }
