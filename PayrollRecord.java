@@ -2,17 +2,15 @@
 public class PayrollRecord{
 
     double baseSalary;
-    double totalSalary;
     int month;
     int year;
     Comission[] comissions;
     int comissionCount;
     
-    public PayrollRecord(double baseSalary , int month , int year) {
-        this.baseSalary = baseSalary;
+    public PayrollRecord(Employee employee, int month , int year) {
+        this.baseSalary = employee.getCurrentSalary();
         this.month = month;
         this.year = year;
-        this.totalSalary = calculateTotalSalary();
         comissions = new Comission[2];
         comissionCount = 0;
     }
@@ -33,6 +31,9 @@ public class PayrollRecord{
     double getTotalComission(){
 
         double total = 0;
+        if (comissionCount==0) {
+            return total;
+        }
         
         for(int i = 0 ; i < comissionCount ; i++){
                 total += comissions[i].amount;

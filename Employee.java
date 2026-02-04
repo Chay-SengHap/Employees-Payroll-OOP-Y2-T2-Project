@@ -38,7 +38,12 @@ public class Employee {
         if (positionCount > 0) {
             return positionsHistory[positionCount - 1];
         }
-        return null;
+        return positionsHistory[positionCount];
+    }
+
+    double getCurrentSalary(){
+        PositionHistory currentPosition = getCurrentPosition();
+        return currentPosition.baseSalary;
     }
 
     void addPayroll(PayrollRecord payroll){
@@ -73,7 +78,7 @@ public class Employee {
         System.out.println("Payroll Records: " + payrollCount);
         if (payrollCount > 0) {
             for (int i = 0; i < payrollCount; i++) {
-                System.out.println("  Payroll " + (i + 1) + ": " + payrollsRecord[i]);
+                System.out.println("  Payroll " + (i + 1) + ": " + payrollsRecord[i].toString());
             }
         } else {
             System.out.println("  No payroll records");
