@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Employee {
 
     static int employeeCount = 0;
@@ -18,7 +20,7 @@ public class Employee {
         this.name = name;
         this.nationalId = nationalId;
 
-        positionsHistory = new PositionHistory[2];
+        positionsHistory = new PositionHistory[1];
         payrollsRecord = new PayrollRecord[12];
 
         positionCount = 0;
@@ -65,6 +67,26 @@ public class Employee {
          payrollsRecord[payrollCount++] = payroll;
 
     }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true; // same reference
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Employee other = (Employee) obj;
+
+        // Compare based on nationalId, which should be unique per person
+        return this.nationalId == other.nationalId;
+    }
+    
+
+    @Override
+    public String toString() {
+        return "Employee [name=" + name + ", companyEmpId=" + companyEmpId + ", nationalId=" + nationalId
+                + ", positionsHistory=" + Arrays.toString(positionsHistory) + ", payrollsRecord="
+                + Arrays.toString(payrollsRecord) + ", positionCount=" + positionCount + ", payrollCount="
+                + payrollCount + "]";
+    }
 
     public void display() {
         System.out.println("=================================");
@@ -76,7 +98,7 @@ public class Employee {
         for(PositionHistory i : positionsHistory){
 
             if (i != null) {
-                System.out.println(i.toString());
+                System.out.println(" "+i.toString());
             } else {
                 System.out.println("  None");
             }

@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Company {
     String companyName;
     String industry;
@@ -13,6 +15,12 @@ public class Company {
        
     }
     void addEmployee(Employee employee){
+        for(int i = 0 ; i < employeeCount ; i++){
+            if (employees[i].equals(employee)) {
+                System.out.println("Employee already exists: " + employee.name);
+                return;
+            }
+        }
         if (employeeCount == employees.length) {
             Employee[] temp = new Employee[employees.length + 2];
             for (int i = 0 ; i < employeeCount ; i++){
@@ -28,5 +36,13 @@ public class Company {
             employees[i].display();
         }
     }
+    
+    @Override
+    public String toString() {
+        return "Company [companyName=" + companyName + ", industry=" + industry + ", employees="
+                + Arrays.toString(employees) + ", employeeCount=" + employeeCount + "]";
+    }
+
+    
 
 }

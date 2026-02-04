@@ -14,6 +14,7 @@ public class PayrollRecord{
         comissions = new Comission[2];
         comissionCount = 0;
     }
+    
 
     void addCommision(Comission comission){
         if(comissionCount == comissions.length){
@@ -48,15 +49,15 @@ public class PayrollRecord{
     }
 
     @Override
-public String toString() {
-    return String.format(
-        "%02d/%d | Base: $%.2f | Commission: $%.2f | Total: $%.2f",
-        month,
-        year,
-        baseSalary,
-        getTotalComission(),
-        calculateTotalSalary()
-    );
+    public String toString() {
+        return String.format(
+            "%02d/%d | Base: $%.2f | Commission: $%.2f | Total: $%.2f",
+            month,
+            year,
+            baseSalary,
+            getTotalComission(),
+            calculateTotalSalary()
+        );
 }
 
     

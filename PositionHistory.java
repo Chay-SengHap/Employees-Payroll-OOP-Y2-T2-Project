@@ -11,6 +11,13 @@ public class PositionHistory {
         this.startDate = startDate;
         this.endDate = "Now";
     }
+    public PositionHistory(String startDate){
+        this.position = "Staff";
+        this.baseSalary = 500;
+        this.startDate = startDate;
+        this.endDate = "Now";
+
+    }
 
 
     @Override
